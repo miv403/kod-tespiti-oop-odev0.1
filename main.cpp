@@ -1,8 +1,8 @@
 #include <fstream>
 #include "./functions.cpp"
 
-#define INPUT_FILE "./girdi.in"
-#define OUTPUT_FILE "./cikti.out"
+#define INPUT_FILE "./data/girdi.in"
+#define OUTPUT_FILE "./data/cikti.out"
 
 int main() {
     // command line args
