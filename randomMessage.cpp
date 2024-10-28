@@ -10,7 +10,7 @@ int main() {
     std::srand(std::time(nullptr));
 
     std::ofstream file;
-    file.open("./random.msg");
+    file.open("./data/random.msg");
     file << MAX;
 
     for(int i = 0; i < MAX; ++i){
