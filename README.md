@@ -9,10 +9,13 @@
 - Bu tekniklerden biri, aynı mesajı iki kez iletmektir. Alıcıda, her iki mesaj kopyası bit
 bit karşılaştırılır.
 - Eşleşen bitler varsa, alınan mesaj hatasızdır.
-Ödevde hatasız bir mesajı kontrol etmek için dizi ve sınıf yapılarının birlikte kullanıldığı bir program yazılması beklenmektedir.
-Gizli kodun mesajı 0 ile 9 arasındaki rakamlarla temsil edildiği varsayılmalı  ve mesajın
-maksimum uzunluğu 250 rakam olmalıdır. Ek olarak mesajın ilk sayısının mesajın uzunluğu
-olduğu varsayılmalıdır.
+
+Ödevde hatasız bir mesajı kontrol etmek için dizi ve sınıf yapılarının
+birlikte kullanıldığı bir program yazılması beklenmektedir.
+
+Gizli kodun mesajı 0 ile 9 arasındaki rakamlarla temsil edildiği
+varsayılmalı ve mesajın maksimum uzunluğu 250 rakam olmalıdır. Ek
+olarak mesajın ilk sayısının mesajın uzunluğu olduğu varsayılmalıdır.
 
 **Örneğin gizli kod aşağıdaki gibiyse:**
 
@@ -56,9 +59,10 @@ mesajı yazılmalıdır.
 
 ### Sınıf yapısı genel itibariyle aşağıdaki gibi olmalıdır
 
-`CodeChecker` adında bir sınıf oluşturulmalı. Bu sınıfın içinde gizli kodu
-okumak için readCode adlı bir metod ve kodları karşılaştırmak için `compareCode`
-adlı başka bir metod yazılmalıdır. Diğer üye fonksiyon ve üye değişkenlerin
+`CodeChecker` adında bir sınıf oluşturulmalı. Bu sınıfın içinde gizli
+kodu okumak için `readCode` adlı bir metod ve kodları karşılaştırmak
+için `compareCode` adlı başka bir metod yazılmalıdır. Diğer üye  
+fonksiyon ve üye değişkenlerin
 tanımları istenilen şekilde yapılabilir.
 
 ## Özetle Sırasıyla Yapılması Beklenenler
@@ -72,4 +76,5 @@ tanımları istenilen şekilde yapılabilir.
 - Kopyanın uzunluğu okunmalıdır.
 - Eğer gizli kodun ve kopyasının uzunlukları aynı ise, kodlar
   karşılaştırılmalıdır; aksi takdirde bir hata mesajı yazdırılmalıdır.
-- Tüm bu işlemler, CodeChecker sınıfı aracılığıyla gerçekleştirilmelidir.
+- Tüm bu işlemler, `CodeChecker` sınıfı aracılığıyla
+  gerçekleştirilmelidir.
