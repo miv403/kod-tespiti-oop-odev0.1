@@ -2,10 +2,11 @@
 #include <ctime>
 #include <iostream>
 #include <fstream>
+#include <string>
 
-#define MAX 250
+int main(int argc, char* argv[]) {
 
-int main() {
+    int MAX = std::stoi(argv[1]);
 
     std::srand(std::time(nullptr));
 
@@ -19,5 +20,4 @@ int main() {
 
     file.close();
     return 0;
-
 }
