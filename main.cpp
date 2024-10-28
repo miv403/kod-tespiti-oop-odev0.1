@@ -12,16 +12,24 @@ int main() {
     CodeChecker chkr;
 
     ifstream input;
+    ofstream output;
     input.open(INPUT_FILE);
+
+    if(!input.is_open()){
+        cerr << INPUT_FILE << " bulunamadi." << endl;
+        return 1;
+    }
+
+    output.open(OUTPUT_FILE);
 
     bool ret = chkr.readCode(input, MAX);
 
-    if(ret != true) {
-        return (ret - 1);
+    if(ret) {
+        ret = chkr.compareCode();
     }
+    
+    chkr.writeCode(output);
 
-    ret = chkr.compareCode();
-
-    return (ret - 1);
+    return ret ? 0 : 1;
 
 }
