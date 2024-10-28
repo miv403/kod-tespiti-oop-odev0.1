@@ -9,8 +9,9 @@ class CodeChecker {
     public:
     // CodeChecker();
     // ~CodeChecker();
-    bool readCode(ifstream&, int);
+    void readCode(ifstream&, int);
     bool compareCode();
+    bool lenCheck();
     void writeCode(ofstream&);
     vector<string> parseLine(string& line);
 
@@ -18,7 +19,7 @@ class CodeChecker {
     vector<string> msg;
     int givenLen;
     int msgLen;
-    int cpMsgLen; // TODO: implement it!
+    // int cpMsgLen; // TODO: implement it! (KILLED)
     bool errorChk; // true: no-error
     string line{};
 

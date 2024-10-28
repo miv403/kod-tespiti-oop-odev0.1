@@ -11,23 +11,29 @@
 
 using namespace std;
 
-bool CodeChecker::readCode(ifstream& file, int max) {
+void CodeChecker::readCode(ifstream& file, int max) {
 
     getline(file, line);
     string tmpLine = line;
 
     msg = parseLine(tmpLine);
+
+    cout << "ileti okundu." << endl;
+
+}
+
+bool CodeChecker::lenCheck() {
+    // TODO: if...else buraya ait degil gibi...
     
-    givenLen = stoi(msg.at(0));
-    
-    if(msg.size() % 2 != 0){ // FIXME: daha iyi bir çözüm bulunabilir
+    if(msg.size() % 2 != 0){ //FIXME: daha iyi bir çözüm bulunabilir
         msgLen = (msg.size() - 3) / 2;
-        cerr << "ileti asimetrik. beklenen karakter sayisi: " << msgLen << endl;
+        cerr << "ileti asimetrik. beklenen ileti uzunlugu: " << msgLen << endl;
         errorChk = false;
         return false;
     }
 
     msgLen = (msg.size() - 2) / 2;
+    givenLen = stoi(msg.at(0));
     
     if (givenLen > MAX) {
         cerr << "iletinin belirtilen uzunlugu "
@@ -41,10 +47,10 @@ bool CodeChecker::readCode(ifstream& file, int max) {
         return false;
     }
 
-
-    cout << "ileti okundu! ileti uzunlugu: " << msgLen << endl;
+    cout << "ileti uzunlugu: " << msgLen << endl;
 
     errorChk = true;
+
     return true;
 }
 
@@ -59,6 +65,7 @@ bool CodeChecker::compareCode(){
 
     for(size_t i = 0; i <= msgLen; ++i){
         if(msg.at(i) != msg.at(i + msgLen + 1)){
+            cerr << "iletide uyusmazlik tespit edildi." << endl;
             cerr << msg.at(i) <<"@[" << i << "] != "
                 << msg.at(i + msgLen + 1) << "@[" << i <<
                                                         "+" << msgLen + 1 << "]"
@@ -70,10 +77,10 @@ bool CodeChecker::compareCode(){
     errorChk = true;
 
     cout << "ileti hata sinamasini basariyla gecti." << endl;
-    cout << "okunan karakter sayisi: " << givenLen << endl;
 
     return true;
 }
+
 
 void CodeChecker::writeCode(ofstream& file){
 
@@ -86,6 +93,7 @@ void CodeChecker::writeCode(ofstream& file){
     }
 
     file << endl << "ileti " << (errorChk ? "hatasiz" : "hatali") << " iletildi.";
+
 }
 
 vector<string> CodeChecker::parseLine(string& line) {

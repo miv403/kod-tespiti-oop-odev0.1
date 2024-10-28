@@ -4,10 +4,7 @@
 #define INPUT_FILE "./data/girdi.in"
 #define OUTPUT_FILE "./data/cikti.out"
 
-int main() {
-    // command line args
-    
-
+int main(int argc, char* argv[]) { // TODO: command line args
 
     CodeChecker chkr;
 
@@ -22,7 +19,9 @@ int main() {
 
     output.open(OUTPUT_FILE);
 
-    bool ret = chkr.readCode(input, MAX);
+    chkr.readCode(input, MAX);
+
+    bool ret = chkr.lenCheck();
 
     if(ret) {
         ret = chkr.compareCode();
