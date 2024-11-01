@@ -27,7 +27,7 @@ bool CodeChecker::lenCheck() {
     
     if(msg.size() % 2 != 0){ 
         msgLen = (msg.size() - 3) / 2;
-        cerr << "gizli kod ile kopyanın uzunluğu birbirine eşit değil." << endl;
+        cerr << "gizli kod ile kopyanin uzunlugu birbirine esit degil." << endl;
         cerr << "beklenen ileti uzunlugu: " << msgLen << endl;
         errorChk = false;
         return false;
@@ -38,7 +38,7 @@ bool CodeChecker::lenCheck() {
     
     if (givenLen > MAX) {
         cerr << "iletinin belirtilen uzunlugu "
-        << MAX << " sayisindan buyuk."
+        << MAX << " sayisindan buyuk. "
         << "uzunluk: " << givenLen << endl;
         errorChk = false;
         return false;
