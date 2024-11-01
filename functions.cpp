@@ -25,9 +25,10 @@ void CodeChecker::readCode(ifstream& file, int max) {
 bool CodeChecker::lenCheck() {
     // TODO: if...else buraya ait degil gibi...
     
-    if(msg.size() % 2 != 0){ //FIXME: daha iyi bir çözüm bulunabilir
+    if(msg.size() % 2 != 0){ 
         msgLen = (msg.size() - 3) / 2;
-        cerr << "ileti asimetrik. beklenen ileti uzunlugu: " << msgLen << endl;
+        cerr << "gizli kod ile kopyanın uzunluğu birbirine eşit değil." << endl;
+        cerr << "beklenen ileti uzunlugu: " << msgLen << endl;
         errorChk = false;
         return false;
     }
@@ -37,7 +38,8 @@ bool CodeChecker::lenCheck() {
     
     if (givenLen > MAX) {
         cerr << "iletinin belirtilen uzunlugu "
-        << MAX << " sayisindan buyuk: " << givenLen << endl;
+        << MAX << " sayisindan buyuk."
+        << "uzunluk: " << givenLen << endl;
         errorChk = false;
         return false;
     }else if(msgLen > MAX) {
@@ -45,9 +47,15 @@ bool CodeChecker::lenCheck() {
             << MAX << " sayisindan buyuk olamaz." << endl;
         errorChk = false;
         return false;
+    }else if(givenLen != msgLen) {
+        cerr << "iletinin uzunlugu belirtilen uzunluk ile esit degil: ";
+        cerr << msgLen << "/" << givenLen  << endl;
+        errorChk = false;
+        return false;
     }
 
     cout << "ileti uzunlugu: " << msgLen << endl;
+
 
     errorChk = true;
 
@@ -56,12 +64,7 @@ bool CodeChecker::lenCheck() {
 
 bool CodeChecker::compareCode(){
 
-    if(givenLen != msgLen) {
-        cerr << "iletinin uzunlugu belirtilen uzunluk ile esit degil: ";
-        cerr << givenLen << "/" << msgLen << endl;
-        errorChk = false;
-        return false;
-    }
+
 
     for(size_t i = 0; i <= msgLen; ++i){
         if(msg.at(i) != msg.at(i + msgLen + 1)){
@@ -74,6 +77,7 @@ bool CodeChecker::compareCode(){
             return false;
         }
     }
+
     errorChk = true;
 
     cout << "ileti hata sinamasini basariyla gecti." << endl;

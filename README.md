@@ -1,3 +1,6 @@
+---
+date: 2024-11-01
+---
 # SERBEST ÖDEV: KOD TESPİTİ
 
 ## Uygulamanın Detayları
@@ -67,14 +70,14 @@ tanımları istenilen şekilde yapılabilir.
 
 ## Özetle Sırasıyla Yapılması Beklenenler
 
-- Girdi ve çıktı dosyalarını açılmalıdır.
-- Eğer girdi dosyası yoksa, programdan çıkılmalıdır.
-- Gizli kodun uzunluğunu okunmalıdır.
-- Eğer gizli kodun uzunluğu 250'den büyükse, programı sonlandırılmalıdır çünkü
+- [x] Girdi ve çıktı dosyalarını açılmalıdır.
+- [x] Eğer girdi dosyası yoksa, programdan çıkılmalıdır.
+- [x] Gizli kodun uzunluğunu okunmalıdır.
+- [x] Eğer gizli kodun uzunluğu 250'den büyükse, programı sonlandırılmalıdır çünkü
   bu programda kodun maksimum uzunluğu 250'dir.
-- Gizli kod okunmalı ve bir diziye kaydedilmelidir.
-- Kopyanın uzunluğu okunmalıdır.
-- Eğer gizli kodun ve kopyasının uzunlukları aynı ise, kodlar
+- [x] Gizli kod okunmalı ve bir diziye kaydedilmelidir.
+- [x] Kopyanın uzunluğu okunmalıdır.
+- [x] Eğer gizli kodun ve kopyasının uzunlukları aynı ise, kodlar
   karşılaştırılmalıdır; aksi takdirde bir hata mesajı yazdırılmalıdır.
-- Tüm bu işlemler, `CodeChecker` sınıfı aracılığıyla
+- [x] Tüm bu işlemler, `CodeChecker` sınıfı aracılığıyla
   gerçekleştirilmelidir.

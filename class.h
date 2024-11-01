@@ -17,9 +17,8 @@ class CodeChecker {
 
     private:
     vector<string> msg;
-    int givenLen;
-    int msgLen;
-    // int cpMsgLen; // TODO: implement it! (KILLED)
+    int givenLen;  // givenLen 1 2 3 givenLen 1 2 3
+    int msgLen;    // (msg.size() - 2) / 2
     bool errorChk; // true: no-error
     string line{};
 
