@@ -4,7 +4,7 @@
 #define INPUT_FILE "./data/girdi.in"
 #define OUTPUT_FILE "./data/cikti.out"
 
-int main(int argc, char* argv[]) { // TODO: command line args
+int main(int argc, char* argv[]) {
 
     CodeChecker chkr;
 

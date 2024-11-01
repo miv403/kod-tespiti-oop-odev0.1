@@ -23,7 +23,6 @@ void CodeChecker::readCode(ifstream& file, int max) {
 }
 
 bool CodeChecker::lenCheck() {
-    // TODO: if...else buraya ait degil gibi...
     
     if(msg.size() % 2 != 0){ 
         msgLen = (msg.size() - 3) / 2;
