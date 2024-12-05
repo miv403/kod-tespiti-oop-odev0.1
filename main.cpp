@@ -6,13 +6,13 @@
 
 int main(int argc, char* argv[]) {
 
-    CodeChecker chkr;
+    CodeChecker chkr(INPUT_FILE);
 
     ifstream input;
     ofstream output;
     input.open(INPUT_FILE);
 
-    if(!input.is_open()){
+    if(!input.is_open()) {
         cerr << INPUT_FILE << " bulunamadi." << endl;
         return 1;
     }
@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     if(ret) {
         ret = chkr.compareCode();
     }
-    
+
     chkr.writeCode(output);
 
     return ret ? 0 : 1;
